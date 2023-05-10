@@ -1,0 +1,20 @@
+<div class="container mt-3">
+  <h1>Restaurants</h1>
+  <div class="cards">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card-trip">
+        <%= image_tag "http://source.unsplash.com/featured/?#{restaurant.category}>&#{rand(1000)}"%>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= restaurant.name %></h2>
+            <p><%= restaurant.phone_number %></p>
+            <p><%= restaurant.address %><p>
+          </div>
+          <h2> <%= restaurant.category %></h2>
+          <img src="http://source.unsplash.com/featured/?person>&<%=rand(1000)%>" class="card-trip-user avatar-bordered"/>
+        </div>
+        <%= link_to "", restaurant_path(restaurant), class: 'card-trip-link'%>
+      </div>
+    <%end%>
+  </div>
+</div>
